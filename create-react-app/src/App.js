@@ -6,7 +6,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {hobbies: ["Counting stars", "Dreaming", 
-								"Rock-climbing", "Programming"], value: '', count: 4 };
+								"Rock-climbing", "Programming"], value: ''};
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -20,8 +20,6 @@ class App extends Component {
         var newHobbies = this.state.hobbies.slice();
         newHobbies.push( this.state.value );
         this.setState({hobbies: newHobbies});
-		// update count
-		this.setState({count: this.state.count +1}) 
 
 		event.preventDefault(); // without this function, the program returns to its default state right after a new input value is being added
                                                                                                                   
@@ -46,7 +44,7 @@ class App extends Component {
 						</form>
 					</div>
 					<div className= "yellow-box">
-						<h1> My Hobbies ({this.state.count}): </h1>
+						<h1> My Hobbies ({this.state.hobbies.length}): </h1>
 						<ul className= "hobbies"> 
 							{hobbiesList}
 						</ul>
